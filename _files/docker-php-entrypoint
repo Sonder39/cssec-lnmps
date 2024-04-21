@@ -1,9 +1,18 @@
 #!/bin/sh
 
-# Generate a password for the user 'newuser' and print it
-PASSWD=$(pwgen -ys 15 1)
-echo "awd:$PASSWD" | chpasswd
-echo "The password for user:awd is $PASSWD"
+echo "=> Setting system root password ..."
+if [ "$ROOT_PASSWORD" = "" ]; then
+    ROOT_PASSWORD=root
+fi
+echo "root:$ROOT_PASSWORD" | chpasswd
+echo "===> System root password set to $ROOT_PASSWORD!"
+
+echo "=> Setting AWD password ..."
+if [ "$AWD_PASSWORD" = "" ]; then
+    AWD_PASSWORD=awd
+fi
+echo "awd:$AWD_PASSWORD" | chpasswd
+echo "===> AWD password set to $AWD_PASSWORD!"
 /usr/sbin/sshd 
 echo "SSH service started with exit code $?"
 
@@ -19,8 +28,8 @@ do
 	sleep 3
 done
 
-if [[ -f /flag.sh ]]; then
-	source /flag.sh
+if [[ -f /run.sh ]]; then
+	source /run.sh
 fi
 
 if [[ -f /var/www/html/db.sql ]]; then

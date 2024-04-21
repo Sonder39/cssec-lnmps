@@ -14,4 +14,4 @@ mysql -e "USE ctftraining;ALTER TABLE FLAG_TABLE CHANGE FLAG_COLUMN $FLAG_COLUMN
 export FLAG=not_flag
 FLAG=not_flag
 
-rm -f /flag.sh
+rm -f /run.sh
