@@ -1,18 +1,22 @@
 #!/bin/sh
 
+# ssh config
+sed -i "s/^#PasswordAuthentication yes.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+sed -i "s/^#PermitRootLogin prohibit-password.*/PermitRootLogin yes/g" /etc/ssh/sshd_config
+echo "=> Allow root remote login!"
 echo "=> Setting system root password ..."
 if [ "$ROOT_PASSWORD" = "" ]; then
     ROOT_PASSWORD=root
 fi
 echo "root:$ROOT_PASSWORD" | chpasswd
-echo "===> System root password set to $ROOT_PASSWORD!"
+echo "root:$ROOT_PASSWORD"
 
-echo "=> Setting AWD password ..."
+echo "=> Setting user awd password ..."
 if [ "$AWD_PASSWORD" = "" ]; then
     AWD_PASSWORD=awd
 fi
 echo "awd:$AWD_PASSWORD" | chpasswd
-echo "===> AWD password set to $AWD_PASSWORD!"
+echo "awd:$AWD_PASSWORD"
 /usr/sbin/sshd 
 echo "SSH service started with exit code $?"
 

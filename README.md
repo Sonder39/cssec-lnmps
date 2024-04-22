@@ -1,15 +1,15 @@
-# NEW
+# Reference
 
-- **[base_web_nginx_mysql_php_56](https://github.com/ctfhub-team/base_web_nginx_mysql_php_56)**
-- **[base_web_nginx_mysql_php_74](https://github.com/ctfhub-team/base_web_nginx_mysql_php_74)**
+- **[base_web_nginx_mysql_php_74](https://github.com/ctfhub-team/base_web_nginx_mysql_php_73)**
 
 
-# Base Image LNMP
+# Base Image LNMPS
 
 - L: Linux alpine
 - N: Nginx
 - M: MySQL
 - P: PHP 7.3
+- S: SSH
 - PHP MySQL Ext
     + mysql
     + mysqli
@@ -18,7 +18,9 @@
 
 ### ENV
 
-- FLAG=CTFTraining{nginx_mysql_php_73}
+- ROOT_PASSWORD=root
+- AWD_PASSWORD=awd
+- FLAG=cssec{nginx_mysql_ssh_php_73}
 - FLAG_TABLE=flagtable
 - FLAG_COLUMN=flagcolumn
 
@@ -34,11 +36,11 @@
 ### Dockerfile
 
 ```
-FROM ctftraining/base_image_nginx_mysql_php_73
+FROM sonder39/cssec-lnmps
 
 COPY src /var/www/html
 
 # 自定义 flag 方式
-# COPY flag.sh /flag.sh
+# COPY run.sh /run.sh
 ```
 
