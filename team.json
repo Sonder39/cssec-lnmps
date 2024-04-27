@@ -1,0 +1,42 @@
+[
+  {
+    "ChallengeID": 1,
+    "TeamID": 1,
+    "IP": "127.0.0.1",
+    "Port": "10011",
+    "SSHPort": "10012",
+    "SSHUser": "root",
+    "SSHPassword": "gsG25b-Bs#c^CjHA",
+    "Description": "web1"
+  },
+  {
+    "ChallengeID": 1,
+    "TeamID": 2,
+    "IP": "127.0.0.1",
+    "Port": "10021",
+    "SSHPort": "10022",
+    "SSHUser": "root",
+    "SSHPassword": "gsG25b-Bs#c^CjHA",
+    "Description": "web1"
+  },
+    {
+    "ChallengeID": 1,
+    "TeamID": 3,
+    "IP": "127.0.0.1",
+    "Port": "10031",
+    "SSHPort": "10032",
+    "SSHUser": "root",
+    "SSHPassword": "gsG25b-Bs#c^CjHA",
+    "Description": "web1"
+  },
+    {
+    "ChallengeID": 1,
+    "TeamID": 4,
+    "IP": "127.0.0.1",
+    "Port": "10041",
+    "SSHPort": "10042",
+    "SSHUser": "root",
+    "SSHPassword": "gsG25b-Bs#c^CjHA",
+    "Description": "web1"
+  }
+]
