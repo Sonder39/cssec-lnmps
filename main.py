@@ -1,7 +1,7 @@
 import json
 import subprocess
 
-imageName = 'sonder39/cssec-lnmps'
+imageName = 'sonder39/john'
 ips = {
     "web": 10001,
     "ssh": 10002
