@@ -1,4 +1,8 @@
 #!/bin/bash
+rm -f /run.sh
+
+# 设置欢迎消息
+echo "Welcome to CSSEC AWD! Now attack with defense!" > /etc/motd
 
 if [[ -z $FLAG_COLUMN ]]; then
 	FLAG_COLUMN="flag"
@@ -14,4 +18,3 @@ mysql -e "USE CSSEC;ALTER TABLE FLAG_TABLE CHANGE FLAG_COLUMN $FLAG_COLUMN CHAR(
 export FLAG=not_flag
 FLAG=not_flag
 
-rm -f /run.sh
