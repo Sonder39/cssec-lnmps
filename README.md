@@ -28,6 +28,7 @@
 
 - src 网站源码
     + db.sql 数据库文件
+    + banner ssh连接欢迎消息
     + index.php
     + ...etc
 - Dockerfile

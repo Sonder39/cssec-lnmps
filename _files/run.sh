@@ -1,8 +1,13 @@
 #!/bin/bash
 rm -f /run.sh
 
-# 设置欢迎消息
-echo "Welcome to CSSEC AWD! Now attack with defense!" > /etc/motd
+if [ -f /var/www/html/banner ]; then
+    mv /var/www/html/banner /
+    cat /banner > /etc/motd
+else
+    # 如果文件不存在，存入默认的欢迎消息
+    echo "Welcome to CSSEC AWD! Now attack with defense!" > /etc/motd
+fi
 
 if [[ -z $FLAG_COLUMN ]]; then
 	FLAG_COLUMN="flag"
